@@ -1,0 +1,12 @@
+{% extends 'course_keeper/base.html' %}
+{% load static %}
+
+{% block content %}
+{% for course in courses %}
+    <h2><a href="/details/{{course.id}}">{{course.name}}</a> </h2>
+    <p>Description: {{course.description}}</p>
+    <p>Created: {{course.created}} </p>
+    <p><a href=" {% url 'edit_course' pk=course.id %}">Edit</a></p>
+{% endfor %}
+
+{% endblock %}

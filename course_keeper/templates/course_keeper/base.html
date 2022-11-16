@@ -1,21 +1,43 @@
 {% load static %}
-
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <head>
-      <link rel="stylesheet" href="{% static '/course_keeper/css/home_style.css' %}">
-      <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>Parkt</title>
-    </head>
+<html>
+<head>
+<title>Parkt</title> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<script src="{% static '/course_keeper/js/script.js' %}"></script>
 
-    <link rel="stylesheet" href=>
+</head>
+<body>
 
-  </head>
-  <body>
+<!-- Side Navigation -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
+  <h1 class="w3-xxxlarge w3-text-theme">Menu</h1>
+  <button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
+  <a href="{% url 'home' %}" class="w3-bar-item w3-button">Home</a>
+  <a href="{% url 'home' %}" class="w3-bar-item w3-button">Create Round</a>
+  <a href="{% url 'home' %}" class="w3-bar-item w3-button">View Rounds</a>
+  <a href="{% url 'create_course' %}" class="w3-bar-item w3-button">Create Course</a>
+  <a href="{% url 'view_course' %}" class="w3-bar-item w3-button">View Courses</a>
+</nav>
+
+
     {% block content %}
 
     {% endblock %}
-  </body>
-</html>
+
+    <!-- Footer -->
+  <br>
+<footer class="w3-container w3-theme-dark w3-padding-16">
+  <h3>Parkt Disc Golf</h3>
+  <p>Powered by Community Donations</p>
+  <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-theme-light w3-padding">Go To Top</span>    
+    <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+  
+</footer>

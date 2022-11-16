@@ -1,0 +1,22 @@
+{% extends 'course_keeper/base.html' %}
+{% load static %}
+
+{% block content %}
+{{course.name}}
+
+
+<h3>Holes</h3>
+{% for hole in holes %}
+    <p>Hole: {{hole.hole_number}}</p>
+    <p>{{hole.length}}</p>
+    <p>Mando: {{hole.mando}}</p>
+    <p>OB: {{hole.out_boundary}}</p>
+    <p>Garbage: {{hole.garbage}}</p>
+    <p>Target: {{hole.target}}</p>
+    <p>Par: {{hole.par}}</p>
+
+    <br>
+{% endfor %}
+
+
+{% endblock %}

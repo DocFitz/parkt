@@ -1,27 +1,77 @@
 {% extends 'course_keeper/base.html' %}
 
 {% block content %}
-<html>
-
-
-
-<body>
-  <div class="main">
-    <p class="sign" align="center">Sign in</p>
-    <form class="form1">
-      <input class="un " type="text" align="center" placeholder="Username">
-      <input class="pass" type="password" align="center" placeholder="Password">
-      
-        <a class="submit" align="center">Sign in</a>
-        <a class="register" align="right">Register</a>
-      
-      <p class="forgot" align="center"><a href="#">Forgot Password?</p>
-            
-                
+<!-- Header -->
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+  <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+  <div class="w3-center">
+  <h4>Disc Golf Games and Tracking</h4>
+  <h1 class="w3-xxxlarge w3-animate-bottom">Parkt</h1>
+    <div class="w3-padding-32">
+      <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="document.getElementById('id01').style.display='block'" style="font-weight:900;">Login</button>
     </div>
-     
-</body>
+  </div>
+</header>
 
-</html>
+<!-- Modal -->
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-top">
+    <header class="w3-container w3-theme-l1"> 
+      <span onclick="document.getElementById('id01').style.display='none'"
+      class="w3-button w3-display-topright">×</span>
+      <h4>Oh snap! We just showed you a modal..</h4>
+      <h5>Because we can <i class="fa fa-smile-o"></i></h5>
+    </header>
+    <div class="w3-padding">
+      <p>Cool huh? Ok, enough teasing around..</p>
+      <p>Go to our <a class="w3-btn" href="/w3css/default.asp">W3.CSS Tutorial</a> to learn more!</p>
+    </div>
+    <footer class="w3-container w3-theme-l1">
+      <p>Modal footer</p>
+    </footer>
+  </div>
+</div>
 
+<div class="w3-row-padding w3-center w3-margin-top">
+  <div class="w3-quarter">
+    <a href="{% url 'create_course' %}" style="text-decoration: none">
+    <div class="w3-card w3-container" style="min-height:460px">
+    <h3>Create Course</h3><br>
+    <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+    <p>Create new loops for leagues</p>
+    <p>Add missing courses</p>
+    <p>Preview courses in developement</p>
+    </div></a>
+  </div>
+  
+  <div class="w3-quarter">
+    <div class="w3-card w3-container" style="min-height:460px">
+    <a href="{% url 'view_course' %}" style="text-decoration: none">
+    <h3>View Courses</h3><br>
+    <i class="fa fa-css3 w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+    <p>Check out courses near you</p>
+    <p>Find custom courses</p>
+    </div></a>
+  </div>
+  
+  <div class="w3-quarter">
+    <div class="w3-card w3-container" style="min-height:460px">
+    <h3>Create Round</h3><br>
+    <i class="fa fa-diamond w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+    <p>Choose a course</p>
+    <p>Play unique games</p>
+    <p>Add your friends</p>
+    </div>
+  </div>
+
+  <div class="w3-quarter">
+    <div class="w3-card w3-container" style="min-height:460px">
+    <h3>View Rounds</h3><br>
+    <i class="fa fa-diamond w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+    <p>Look at past rounds</p>
+    <p>Check out public rounds</p>
+    </div>
+  </div>
+  </div>
+  
 {% endblock %}
